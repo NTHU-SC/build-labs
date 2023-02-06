@@ -1,8 +1,8 @@
 CXX = g++
-exe = main.out
+exe = main.elf
 obj = main.o print.o
 
-all: $(obj)
+$(exe): $(obj)
 	$(CXX) -o $(exe) $(obj)
 
 %.o: %.cpp
@@ -10,4 +10,6 @@ all: $(obj)
 
 .PHONY: clean
 clean:
-	rm *.o
+	rm $(exe) *.o
+
+
